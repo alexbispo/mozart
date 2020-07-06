@@ -1,1 +1,11 @@
-<h1>Expenses Home</h1>
+<h1>Listando despesas</h1>
+
+<table>
+  <%= for expense <- @expenses do %>
+    <tr>
+      <td><%= expense.name %></td>
+      <td><%= expense.amount %></td>
+      <td><%= expense.status %></td>
+    </tr>
+  <% end %>
+</table>
