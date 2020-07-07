@@ -5,7 +5,10 @@
     <tr>
       <td><%= expense.name %></td>
       <td><%= expense.amount %></td>
-      <td><%= expense.status %></td>
+      <td><%= status(expense.status) %></td>
+      <td><%= frequency(expense.frequency) %></td>
+      <td><%= date_time(expense.due_date) %></td>
     </tr>
   <% end %>
 </table>
+<p><strong>TOTAL:</strong> <%= total_expenses(@expenses) %></p>

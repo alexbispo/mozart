@@ -7,10 +7,11 @@ defmodule Mozart.Expenses do
   alias Mozart.Expenses.Expense
 
   def list_expenses do
+    {:ok, due_date_one, _} = DateTime.from_iso8601("2020-07-01T23:59:00Z")
     [
-      Expense.new(%{id: 1, name: "Arrendamento", amount: Money.new(68000), status: 0}),
-      Expense.new(%{id: 2, name: "EDP", amount: Money.new(2000), status: 0}),
-      Expense.new(%{id: 3, name: "SMAS", amount: Money.new(2100), status: 0})
+      %Expense{id: 1, name: "Arrendamento", amount: Money.new(68000), status: 1, frequency: 1, due_date: due_date_one },
+      %Expense{id: 2, name: "EDP", amount: Money.new(2000)},
+      %Expense{id: 3, name: "SMAS", amount: Money.new(2100)}
     ]
   end
 
