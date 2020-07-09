@@ -47,6 +47,7 @@ defmodule Mozart.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:money, "~> 1.4"},
       {:tzdata, "~> 1.0.1"},
+      {:nimble_strftime, "~> 0.1.0"}
     ]
   end
 
