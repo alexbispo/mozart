@@ -1,14 +1,23 @@
 <h1>Listando despesas</h1>
 
 <table>
-  <%= for expense <- @expenses do %>
-    <tr>
-      <td><%= expense.name %></td>
-      <td><%= expense.amount %></td>
-      <td><%= status(expense.status) %></td>
-      <td><%= frequency(expense.frequency) %></td>
-      <td><%= date_time(expense.due_date) %></td>
-    </tr>
-  <% end %>
+  <thead>
+    <th>Nome</th>
+    <th>Valor a Pagar</th>
+    <th>Status</th>
+    <th>Frequência</th>
+    <th>Vencimento</th>
+  </thead>
+  <tbody>
+    <%= for expense <- @expenses do %>
+      <tr>
+        <td><%= expense.name %></td>
+        <td><%= expense.amount %></td>
+        <td><%= status(expense.status) %></td>
+        <td><%= frequency(expense.frequency) %></td>
+        <td><%= date_time(expense.due_date) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <p><strong>TOTAL:</strong> <%= total_expenses(@expenses) %></p>
